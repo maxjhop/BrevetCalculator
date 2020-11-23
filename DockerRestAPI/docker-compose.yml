@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - 6285:6285
+      - 6285:80
     volumes:
       - .:/todo
     links:
@@ -17,7 +17,7 @@ services:
   #ports:
   #- 6285:80 # host:container
   db:
-    image: mongo
+          image: mongo:3
 
   website:
     image: php:apache  

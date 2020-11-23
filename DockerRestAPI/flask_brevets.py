@@ -146,7 +146,8 @@ class allCSV(Resource):
             for item in close_times:
                 close_csv = close_csv + item + ","
 
-        return {"open_times" : open_csv, "close_times" : close_csv}
+        #return {"open_times" : open_csv, "close_times" : close_csv}
+        return open_csv + close_csv
 
 class openCSV(Resource):
     def get(self):
@@ -177,7 +178,8 @@ class openCSV(Resource):
             for item in open_times:
                 open_csv = open_csv + item + ","
 
-        return {"open_times" : open_csv}
+        #return {"open_times" : open_csv}
+        return open_csv
 
 class closeCSV(Resource):
     def get(self):
@@ -209,7 +211,8 @@ class closeCSV(Resource):
             for item in close_times:
                 close_csv = close_csv + item + ","
 
-        return {"close_times" : close_csv}
+        #return {"close_times" : close_csv}
+        return close_csv
 
 api.add_resource(allCSV, "/listall/csv")
 api.add_resource(openCSV, "/listopenonly/csv")
