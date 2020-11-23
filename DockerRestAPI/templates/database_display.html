@@ -1,0 +1,28 @@
+<button type="button" onclick="home()">Home</button>
+<script>
+    function home(){
+    console.log("Returning Home");
+    location.href = '/index';
+    }
+</script>
+<style>
+    .tab{
+   	tab-size: 8;
+    }
+</style>
+
+<h1> WELCOME TO THE DISPLAY PAGE! </h1>
+<table class="tab1">
+	<tr>
+		<td><pre class="tab"> Open time: </pre></td>
+		<td><pre class="tab"> 	Close time:</pre></td>
+	</tr>
+	
+{% for item in items %}
+	<tr>
+		<td><pre class="tab"> {{ item.start_time }}</pre></td>
+		<td><pre class="tab"> 	{{  item.close_time  }}</pre></td>
+	</tr>
+{% endfor %}
+
+</table>
