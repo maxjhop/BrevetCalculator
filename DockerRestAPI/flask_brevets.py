@@ -134,6 +134,8 @@ class allCSV(Resource):
             close_times.append(item["close_time"])
 
         if (top != False):
+            if (top > len(open_times)):
+                top = len(open_times)
             for i in range(top):
                 open_csv = open_csv + open_times[i] + ","
                 close_csv = close_csv + close_times[i] + ","
@@ -167,6 +169,8 @@ class openCSV(Resource):
             open_times.append(item["start_time"])
 
         if (top != False):
+            if (top > len(open_times)):
+                top = len(open_times)
             for i in range(top):
                 open_csv = open_csv + open_times[i] + ","
         else: 
@@ -197,8 +201,10 @@ class closeCSV(Resource):
             close_times.append(item["close_time"])
 
         if (top != False):
+            if (top > len(close_times)):
+                top = len(close_times)
             for i in range(top):
-                open_csv = open_csv + open_times[i] + ","
+                close_csv = close_csv + close_times[i] + ","
         else: 
             for item in close_times:
                 close_csv = close_csv + item + ","
